@@ -24,14 +24,19 @@ def calc(num1,num2,op='multiply'):
             else:
                 return num1/num2  
         case 'modulo':
-            return num1%num2
-        case 'intdivide':
+            if num2==0:
+                return"You can't divide by 0!"
+            else:
+                return num1%num2 
+        case 'int_divide':
             if num2==0:
                 return"You can't divide by 0!"
             else:
                 return num1//num2 
         case 'power':
             return num1**num2
+        case _:
+            return 'Unknown'
 
 #Task 4
 def data_type_conversion(value,type):
@@ -75,17 +80,15 @@ def repeat(string,count):
     return text
 
 # Task 7
-def student_scores(student,**kwargs):
-    if student=='best':
-        high=0
-        for key, value in kwargs.items():
-            if value >  high:
-                high=value
-                best=key
-        return best
-    elif student=='mean':
-            average=sum(kwargs.values())/len(kwargs)
-            return average
+def student_scores(student, **kwargs):
+    if student == 'best':
+        if not kwargs:
+            return None
+        return max(kwargs, key=kwargs.get)
+    elif student == 'mean':
+        if not kwargs:
+            return None
+        return sum(kwargs.values()) / len(kwargs)
 
 # Task 8
 def titleize(string):
