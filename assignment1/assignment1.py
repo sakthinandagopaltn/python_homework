@@ -7,36 +7,30 @@ def greet(name):
     return f"Hello, {name}!"
 
 # Task 3
-def calc(num1,num2,op='multiply'):
-    if type(num1) is str or type(num2) is str:
-            return "You can't multiply those values!"
-    match op:
-        case 'add':
-            return num1+num2
-        case 'subtract':
-            ans=num1-num2
-            return ans
-        case 'multiply':
-            return num1*num2
-        case 'divide':
-            if num2==0:
-                return"You can't divide by 0!"
-            else:
-                return num1/num2  
-        case 'modulo':
-            if num2==0:
-                return"You can't divide by 0!"
-            else:
-                return num1%num2 
-        case 'int_divide':
-            if num2==0:
-                return"You can't divide by 0!"
-            else:
-                return num1//num2 
-        case 'power':
-            return num1**num2
-        case _:
-            return 'Unknown'
+def calc(num1, num2, op='multiply'):
+    try:
+        match op:
+            case 'add':
+                return num1 + num2
+            case 'subtract':
+                return num1 - num2
+            case 'multiply':
+                try:
+                    return num1 * num2
+                except TypeError:
+                    return "You can't multiply those values!"
+            case 'divide':
+                return num1 / num2
+            case 'modulo':
+                return num1 % num2
+            case 'int_divide':
+                return num1 // num2
+            case 'power':
+                return num1 ** num2
+            case _:
+                return "Unknown operation!"
+    except ZeroDivisionError:
+        return "You can't divide by 0!"
 
 #Task 4
 def data_type_conversion(value,type):
@@ -80,14 +74,10 @@ def repeat(string,count):
     return text
 
 # Task 7
-def student_scores(student, **kwargs):
-    if student == 'best':
-        if not kwargs:
-            return None
+def student_scores(mode, **kwargs):
+    if mode == 'best':
         return max(kwargs, key=kwargs.get)
-    elif student == 'mean':
-        if not kwargs:
-            return None
+    elif mode == 'mean':
         return sum(kwargs.values()) / len(kwargs)
 
 # Task 8
