@@ -44,7 +44,7 @@ def data_type_conversion(value,type):
             return str(value)
         else:
             return f"You can't convert {value} into a {type}."
-    except Exception:
+    except ValueError:
         return f"You can't convert {value} into a {type}."
 
 #Task 5
@@ -89,7 +89,7 @@ def student_scores(student,**kwargs):
 
 # Task 8
 def titleize(string):
-    little=["a", "on", "an", "the", "of", "and", "is", "and", "in"]
+    little=["a", "on", "an", "the", "of", "and", "is", "in"]
     words=string.split()
     for i,word in enumerate(words):
         if i==0 or i==len(words)-1 or word.lower() not in little:
