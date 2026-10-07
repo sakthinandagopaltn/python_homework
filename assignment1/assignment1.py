@@ -29,7 +29,7 @@ def calc(num1,num2,op='multiply'):
             if num2==0:
                 return"You can't divide by 0!"
             else:
-                return num1/num2 
+                return num1//num2 
         case 'power':
             return num1**num2
 
@@ -44,7 +44,7 @@ def data_type_conversion(value,type):
             return str(value)
         else:
             return f"You can't convert {value} into a {type}."
-    except ValueError or AttributeError or TypeError:
+    except Exception:
         return f"You can't convert {value} into a {type}."
 
 #Task 5
