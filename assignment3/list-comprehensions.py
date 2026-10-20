@@ -5,6 +5,7 @@ try:
         records=csv.reader(file)
         next(records)
         list_of_records=[record[1]+' '+record[2] for record in records]
+        print(list_of_records)
         elist=[ename for ename in list_of_records if 'e' in ename.lower()]
         print(elist)
 except Exception as e:
