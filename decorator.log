@@ -1,0 +1,15 @@
+function: hello_world
+positional parameters: none
+keyword parameters: none
+return: None
+
+function: all_true
+positional parameters: [1, 2, 3]
+keyword parameters: none
+return: True
+
+function: kw_func
+positional parameters: none
+keyword parameters: {'name': 'Ann', 'age': 30}
+return: logger_decorator
+
