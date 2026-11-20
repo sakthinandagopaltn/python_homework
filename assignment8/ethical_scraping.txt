@@ -1,0 +1,24 @@
+Which sections of the website are restricted for crawling?
+Answer : 
+    For all bots (User-agent: *), Wikipedia's robots.txt blocks /w/, /api/ and /trap/ , etc. 
+    User-agent: *
+    Disallow: /w/
+    Disallow: /api/
+    Disallow: /trap/
+    Disallow: /wiki/Special:
+    Disallow: /wiki/Spezial:
+    Disallow: /wiki/Spesial:
+    Disallow: /wiki/Special%3A
+    Disallow: /wiki/Spezial%3A
+    Disallow: /wiki/Spesial%3A
+
+
+Are there specific rules for certain user agents?
+Answer : 
+    Yes. Many bots are banned entirely with "Disallow: /", including MJ12bot, Mediapartners-Google*,
+
+
+Why websites use robots.txt?
+Answer : 
+    'robots.txt' helps website owners control the traffic to their site and avoid server overload.
+    Ethical scraping involves reviewing and adhering to the rules set in robots.txt.
